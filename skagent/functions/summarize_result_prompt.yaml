@@ -1,0 +1,29 @@
+name: "userOutputFunction"
+description: "Generates a user-friendly summary from a data quality API response."
+template_format: semantic-kernel
+template: |
+  You are a data assistant. Given the JSON response:
+  {{$input}}
+
+  Generate a user-friendly summary.
+
+  Make sure to:
+  - Explain the total count in simple words
+  - Include the SQL query used
+
+  Response format:
+
+  Result Summary:
+  There are "..." records in dataset "..." executed with condition "...".
+
+  SQL Used:
+  ```sql
+  "..."
+input_variables:
+  - name: input
+    description: "The JSON input from the data quality execution results."
+    is_required: true
+execution_settings:
+  default:
+    max_tokens: 500
+    temperature: 0.2

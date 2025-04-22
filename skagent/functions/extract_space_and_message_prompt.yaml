@@ -1,0 +1,26 @@
+name: "userInputFunction"
+description: "Extracts space ID and a clean message from user input."
+template_format: semantic-kernel
+template: |
+  You are an assistant. Your job is to extract the following from a user query:
+
+  1. The intended `space_id` (assume it's mentioned explicitly or use the default "01f01e2d8e1d1087a9e7186c76e64ed0")
+  2. A clean, short query message to send to the data quality tool
+  3. If either is not available do not probe.
+
+  User message:
+  {{$input}}
+
+  Respond in JSON format:
+  {
+    "space_id": "...",
+    "message": "..."
+  }
+input_variables:
+  - name: input
+    description: "The user's query."
+    is_required: true
+execution_settings:
+  default:
+    max_tokens: 250
+    temperature: 0.0

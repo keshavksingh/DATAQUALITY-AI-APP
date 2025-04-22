@@ -1,0 +1,31 @@
+services:
+  mcpserver:
+    build:
+      context: .
+      dockerfile: mcpserver/Dockerfile
+    container_name: mcpserver
+    volumes:
+      - ./mcpserver:/mcpserver
+    stdin_open: true
+    tty: true
+    networks:
+      - genie_net
+
+  semantic-kernel-agent:
+    build:
+      context: .
+      dockerfile: skagent/Dockerfile
+    container_name: semantickernelagent
+    depends_on:
+      - mcpserver
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./mcpserver:/mcp_server
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - genie_net
+
+networks:
+  genie_net:
+    driver: bridge
