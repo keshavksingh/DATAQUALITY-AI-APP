@@ -1,2 +1,2 @@
-# DataQuality-AIAgent
- AI Agent automating Data Quality with Azure Databricks Genie
+# DATAQUALITY-AI-APP
+ AI APP automating Data Quality with Azure Databricks Genie
