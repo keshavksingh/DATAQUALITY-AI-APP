@@ -1,9 +1,9 @@
-mcp=1.6.0
+mcp==1.6.0
 databricks-sdk>=0.12.0
 httpx>=0.24.0
 python-dotenv>=1.0.0 
-databricks-sdk[openai]=0.50.0
-fastapi=0.115.12
-uvicorn=0.34.2
-semantic-kernel=1.28.1
-python-dotenv=1.1.0
+databricks-sdk[openai]==0.50.0
+fastapi==0.115.12
+uvicorn==0.34.2
+semantic-kernel==1.28.1
+python-dotenv==1.1.0
